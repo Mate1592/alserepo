@@ -1,0 +1,3 @@
+ls
+find -name "*.txt"
+
