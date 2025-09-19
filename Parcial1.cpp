@@ -15,5 +15,14 @@ struct Point
     int y;
 };
 
-//
+//Funcion para la distancia entre dos puntos
+
+
+
+
+//El main
+
+
+
+//Pedir valores al usuario
 
