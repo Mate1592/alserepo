@@ -3,11 +3,9 @@
 // David Mateo Espinel Ramos
 //Kaleth Stalin Sierra Aranguen
 
-
-
-
 #include <iostream>
 #include <cmath>
+#include <vector>
 
 // Definir la estructura de un punto en 2D
 struct Point
@@ -19,11 +17,10 @@ struct Point
 /*Como puede modificar la declaración de la función para que sea mas eficiente en el manejo de memoria?
 Teniendo en cuenta que solo necesita leer los valores, pero no modificarlos*/
 
-
 double calcularMagnitud(const Point& p1) //con el const &point no hace una copia innecesaria, usa mem dinamica
 {
     double magnitud = std::sqrt(p1.x * p1.x + p1.y * p1.y); //se completa la fórmula de la magnitud
-    return  magnitud ;
+    return magnitud;
 }
 
 // Función para leer las coordenadas de varios puntos
@@ -67,7 +64,6 @@ void leerPuntos(std::vector<Point>& puntos)
 // Función para calcular la mayor magnitud
 double calcularMayorMagnitud(const std::vector<Point>& puntos, int &indiceMayorMagnitud)
 {
-
     // Funcion del parcial 1 punto 3 apoyandose de la funcion calcular magnitud
     double mayorMagnitud = calcularMagnitud(puntos[0]);
     indiceMayorMagnitud = 0;
@@ -96,7 +92,7 @@ void mostrarResultado(const std::vector<Point>& puntos, int indiceMayorMagnitud,
 
 int main()
 {
-    int n;
+    int n;// Nmro de puntos
 
     std::cout << "Ingrese el número de puntos (mínimo 2): ";
     std::cin >> n;
