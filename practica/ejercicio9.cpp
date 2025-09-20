@@ -41,7 +41,7 @@ int main() {
     
     // Mostrar resultados
     cout << endl << "RESULTADOS " << endl;
-    cout << "Número 1: " << numero1 a<< endl;
+    cout << "Número 1: " << numero1 << endl;
     cout << "Número 2: " << numero2 << endl;
     cout << "El MCD de " << numero1 << " y " << numero2 << " es: " << mcd << endl;
     return 0;
