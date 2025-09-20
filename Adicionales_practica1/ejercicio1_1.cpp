@@ -1,3 +1,9 @@
+
+//adicionales practica 1 de ALSE Grupo 3
+//Integrantes:
+// David Mateo Espinel Ramos
+//Kaleth Stalin Sierra Aranguen
+
 #include <iostream>
 #include <iomanip>
 
@@ -42,10 +48,23 @@ int main() {
     costoTotal = subtotal + impuesto;
     
     // Mostrar resultados
-    cout << "=== RESUMEN DE LA COMPRA " << endl;
+    cout << "-RESUMEN DE LA COMPRA- " << endl;
     cout << fixed << setprecision(2);
     cout << "Subtotal: $" << subtotal << endl;
     cout << "Impuesto (8%): $" << impuesto << endl;
     cout << "Total antes de descuento: $" << costoTotal << endl;
     
- 
+    // Aplicar descuento si corresponde
+    if (costoTotal > LIMITE_DESCUENTO) {
+        double descuento = costoTotal * TASA_DESCUENTO;
+        costoTotal -= descuento;
+        
+        cout << "Descuento aplicado (10%) -$" << descuento << endl;
+        cout << "COSTO TOTAL FINAL: $" << costoTotal << endl;
+    } else {
+        cout << "COSTO TOTAL FINAL: $" << costoTotal << endl;
+        cout << "(No se aplica descuento - total menor a 100)" << endl;
+    }
+    
+    return 0;
+}
