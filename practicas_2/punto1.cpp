@@ -6,7 +6,7 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         int n = nums.size();
-        int *arr = nums.data(); // apuntador al primer elemento del vector
+        int *arr = nums.data(); // apuntador al primer elem vector
 
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
@@ -46,5 +46,5 @@ int main() {
         cout << "No se encontro una solucion." << endl;
     }
 
-    return 0; 
+    return 0;
 }
