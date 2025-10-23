@@ -47,5 +47,6 @@
         "iomanip": "cpp",
         "ctime": "cpp",
         "sstream": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/workspaces/alserepo/Lab3_corteII/biblio"
 }
