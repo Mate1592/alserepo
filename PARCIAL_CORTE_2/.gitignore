@@ -1,0 +1,13 @@
+# Archivos generados por CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Archivos de compilación y ejecutables
+*.o
+*.out
+simulador_hogar
+
+# Reportes generados
+*.txt
