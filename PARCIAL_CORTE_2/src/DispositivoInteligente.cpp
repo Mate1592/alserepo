@@ -81,3 +81,11 @@ bool DispositivoInteligente::getEstado() const { return estado_; }
 bool DispositivoInteligente::estaBloqueado() const {
     return controlRemotoBloqueado_;
 }
+
+/**
+ * @brief Obtiene el consumo de energía base del dispositivo.
+ * @return El consumo en Vatios/hora.
+ */
+float DispositivoInteligente::getConsumoEnergia() const {
+    return consumoEnergia_;
+}

@@ -59,4 +59,7 @@ class DispositivoInteligente {
 
     /** @brief Devuelve si el control remoto está bloqueado. */
     bool estaBloqueado() const;
+
+    /** @brief Devuelve el consumo base de energía del dispositivo. */
+    float getConsumoEnergia() const;
 };

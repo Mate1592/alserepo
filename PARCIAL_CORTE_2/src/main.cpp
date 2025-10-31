@@ -38,18 +38,23 @@ int main() {
     // I. Usar contenedores de la STL para almacenar dispositivos
     std::cout << "--- Configurando el Hogar Inteligente ---" << std::endl;
     std::vector<DispositivoInteligente> dispositivos;
-    dispositivos.push_back(
-        DispositivoInteligente("Asistente de Voz", 3.0f));  // Siempre encendido
-    dispositivos.push_back(DispositivoInteligente("Cafetera Expreso", 1200.0f));
-    dispositivos.push_back(
-        DispositivoInteligente("Lámpara Dormitorio", 10.0f));
-    dispositivos.push_back(DispositivoInteligente("TV 65 pulgadas", 150.0f));
-    dispositivos.push_back(
-        DispositivoInteligente("Consola de Videojuegos", 200.0f));
-    dispositivos.push_back(
-        DispositivoInteligente("Cargador de Laptop", 65.0f));
 
-    std::cout << "Dispositivos registrados: " << dispositivos.size() << std::endl;
+    // Lista de dispositivos a crear
+    std::vector<std::pair<std::string, float>> dispositivosACrear = {
+        {"Asistente de Voz", 3.0f},
+        {"Cafetera Expreso", 1200.0f},
+        {"Lámpara Dormitorio", 10.0f},
+        {"TV 65 pulgadas", 150.0f},
+        {"Consola de Videojuegos", 200.0f},
+        {"Cargador de Laptop", 65.0f}
+    };
+
+    std::cout << "Registrando dispositivos..." << std::endl;
+    for (const auto& d : dispositivosACrear) {
+        dispositivos.push_back(DispositivoInteligente(d.first, d.second));
+        std::cout << "- " << d.first << " (Consumo base: " << d.second
+                  << " Vatios/hora)" << std::endl;
+    }
 
     // II. Simular lectura de datos y registro de consumo a lo largo de un día
     std::cout << "\n--- Iniciando Simulación de un Día Completo ---"
