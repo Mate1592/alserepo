@@ -11,3 +11,5 @@ simulador_hogar
 
 # Reportes generados
 reporte_consumo.txt
+# Documentación generada por Doxygen
+docs/
