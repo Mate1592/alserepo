@@ -215,8 +215,11 @@ CMakeFiles/simulador_hogar.dir/src/main.cpp.o: src/main.cpp \
   /usr/include/c++/13/bits/istream.tcc \
   /usr/include/c++/13/bits/locale_classes.h \
   /usr/include/c++/13/bits/locale_classes.tcc \
+  /usr/include/c++/13/bits/locale_conv.h \
   /usr/include/c++/13/bits/locale_facets.h \
   /usr/include/c++/13/bits/locale_facets.tcc \
+  /usr/include/c++/13/bits/locale_facets_nonio.h \
+  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
   /usr/include/c++/13/bits/localefwd.h \
   /usr/include/c++/13/bits/memoryfwd.h \
   /usr/include/c++/13/bits/move.h \
@@ -251,6 +254,7 @@ CMakeFiles/simulador_hogar.dir/src/main.cpp.o: src/main.cpp \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
+  /usr/include/c++/13/ctime \
   /usr/include/c++/13/cwchar \
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
@@ -263,10 +267,12 @@ CMakeFiles/simulador_hogar.dir/src/main.cpp.o: src/main.cpp \
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/fstream \
   /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/locale \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/stdexcept \
@@ -281,6 +287,7 @@ CMakeFiles/simulador_hogar.dir/src/main.cpp.o: src/main.cpp \
   /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/libintl.h \
   /usr/include/linux/errno.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
@@ -363,7 +370,9 @@ CMakeFiles/simulador_hogar.dir/src/main.cpp.o: src/main.cpp \
   /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -378,6 +387,14 @@ CMakeFiles/simulador_hogar.dir/src/main.cpp.o: src/main.cpp \
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
+
+/usr/include/c++/13/ctime:
+
+/usr/include/c++/13/bits/locale_facets_nonio.tcc:
+
+/usr/include/c++/13/bits/locale_facets_nonio.h:
+
+/usr/include/c++/13/bits/locale_conv.h:
 
 /usr/include/c++/13/bits/fstream.tcc:
 
@@ -451,6 +468,8 @@ CMakeFiles/simulador_hogar.dir/src/main.cpp.o: src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
+/usr/include/c++/13/locale:
+
 /usr/include/c++/13/bits/stl_uninitialized.h:
 
 /usr/include/c++/13/bits/move.h:
@@ -470,6 +489,8 @@ CMakeFiles/simulador_hogar.dir/src/main.cpp.o: src/main.cpp \
 /usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/c++/13/bits/utility.h:
+
+/usr/include/c++/13/iomanip:
 
 include/DispositivoInteligente.h:
 
@@ -574,6 +595,8 @@ src/DispositivoInteligente.cpp:
 /usr/include/c++/13/bits/concept_check.h:
 
 /usr/include/c++/13/bits/alloc_traits.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
@@ -689,6 +712,8 @@ src/main.cpp:
 
 /usr/include/pthread.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h:
+
 /usr/include/sched.h:
 
 /usr/include/stdlib.h:
@@ -712,6 +737,8 @@ src/main.cpp:
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/libintl.h:
 
 /usr/include/c++/13/bits/basic_string.h:
 
