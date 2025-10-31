@@ -1,8 +1,30 @@
-# Directorio de compilación
+# --- Directorios de Compilación (CMake) ---
+# Ignora la carpeta principal de compilación y sus archivos generados
 build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
 
-# Reportes generados
+# Ignora el ejecutable de la aplicación
+simulador_hogar
+*.o
+*.a
+*.so
+
+# --- Archivos de Salida de la Aplicación ---
+# Reportes generados por la simulación
 reporte_consumo.txt
 
-# Documentación generada por Doxygen
+# --- Archivos de Documentación (Doxygen) ---
+# Contiene la salida HTML/LaTeX generada
 docs/
+html/
+latex/
+
+# --- Configuraciones del Editor (VS Code) ---
+# Ignora la carpeta de configuración específica del usuario
+.vscode/
+
+# --- Otros archivos temporales ---
+*~
