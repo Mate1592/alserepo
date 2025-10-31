@@ -39,7 +39,6 @@ int main() {
     std::cout << "--- Configurando el Hogar Inteligente ---" << std::endl;
     std::vector<DispositivoInteligente> dispositivos;
 
-<<<<<<< HEAD
     // Lista de dispositivos a crear
     std::vector<std::pair<std::string, float>> dispositivosACrear = {
         {"Asistente de Voz", 3.0f},
@@ -49,9 +48,6 @@ int main() {
         {"Consola de Videojuegos", 200.0f},
         {"Cargador de Laptop", 65.0f}
     };
-=======
-    std::cout << " Simulación de Hogar Inteligente " << std::endl;
->>>>>>> 1dc127f (correccion con los dispositivos simulados)
 
     std::cout << "Registrando dispositivos..." << std::endl;
     for (const auto& d : dispositivosACrear) {
@@ -118,42 +114,10 @@ int main() {
     }
     dispositivos[2].desbloquearControlRemoto(); // Se desbloquea
 
-<<<<<<< HEAD
     // --- Fin de la Simulación ---
     std::cout << "\n--- Fin de la Simulación ---" << std::endl;
-=======
-    // Simulación: Apagar un dispositivo y medir consumo por 2 horas más
-    std::cout << "\n2. Apagando la lámpara y usando el resto por 2 horas..."
-              << std::endl;
-    dispositivos[0].apagar();
-    std::cout << "- " << dispositivos[0].getNombre() << " ha sido apagado."
-              << std::endl;
 
-    for (size_t i = 0; i < dispositivos.size(); ++i) {
-        consumoTotal[i] += dispositivos[i].medirConsumo(2.0f);
-    }
-
-    // Simulación: Bloquear el control remoto del ventilador
-    std::cout << "\n3. Bloqueando el control del ventilador..." << std::endl;
-    dispositivos[1].bloquearControlRemoto();
-    std::cout << " Intentando apagar el ventilador (debería fallar)"
-              << std::endl;
-    dispositivos[1].apagar();  // No debería cambiar el estado
-
-    if (dispositivos[1].getEstado()) {
-        std::cout << "El ventilador sigue encendido (control bloqueado)."
-                  << std::endl;
-    }
-
-    // Apagar todos los dispositivos al final
-    std::cout << "\n Fin de la Simulación " << std::endl;
-    for (auto& dispositivo : dispositivos) {
-        dispositivo.desbloquearControlRemoto();  // Desbloquear por si acaso
-        dispositivo.apagar();
-    }
->>>>>>> 1dc127f (correccion con los dispositivos simulados)
-
-    // III.reporte en formato .txt
+    // III. (BONO) Generar un reporte en formato .txt
     generarReporte(dispositivos, consumoTotal);
 
     return 0;

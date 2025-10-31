@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/simulador_hogar.dir/src/main.cpp.o CMakeFiles/simulador_hogar.dir/src/DispositivoInteligente.cpp.o -o simulador_hogar 

@@ -1,3 +1,0 @@
-/workspaces/alserepo/PARCIAL_CORTE_2/CMakeFiles/simulador_hogar.dir
-/workspaces/alserepo/PARCIAL_CORTE_2/CMakeFiles/edit_cache.dir
-/workspaces/alserepo/PARCIAL_CORTE_2/CMakeFiles/rebuild_cache.dir
