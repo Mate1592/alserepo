@@ -16,11 +16,6 @@ simulador_hogar
 # Reportes generados por la simulación
 reporte_consumo.txt
 
-# --- Archivos de Documentación (Doxygen) ---
-# Contiene la salida HTML/LaTeX generada
-docs/
-html/
-latex/
 
 # --- Configuraciones del Editor (VS Code) ---
 # Ignora la carpeta de configuración específica del usuario
