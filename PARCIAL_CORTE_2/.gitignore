@@ -1,15 +1,8 @@
-# Archivos generados por CMake
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
-Makefile
-
-# Archivos de compilación y ejecutables
-*.o
-*.out
-simulador_hogar
+# Directorio de compilación
+build/
 
 # Reportes generados
 reporte_consumo.txt
+
 # Documentación generada por Doxygen
 docs/
