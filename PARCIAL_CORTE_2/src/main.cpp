@@ -79,7 +79,7 @@ int main() {
     dispositivos[2].apagar();
     std::cout << "- Lámpara del dormitorio encendida mientras se prepara para el día." << std::endl;
 
-    // --- Rutina de la Tarde (4 horas de trabajo) ---
+    // Rutina de la Tarde (4 horas de trabajo)
     std::cout << "\n[TARDE - 1:00 PM a 5:00 PM]" << std::endl;
     // El cargador de la laptop se usa durante la jornada de trabajo
     dispositivos[5].encender();
@@ -87,7 +87,7 @@ int main() {
     dispositivos[5].apagar();
     std::cout << "- Laptop cargando durante las horas de trabajo." << std::endl;
 
-    // --- Rutina de la Noche (4 horas de ocio) ---
+    // Rutina de la Noche (4 horas de ocio)
     std::cout << "\n[NOCHE - 7:00 PM a 11:00 PM]" << std::endl;
     // La TV se enciende por 3 horas
     dispositivos[3].encender();
@@ -117,7 +117,7 @@ int main() {
     // --- Fin de la Simulación ---
     std::cout << "\n--- Fin de la Simulación ---" << std::endl;
 
-    // III. (BONO) Generar un reporte en formato .txt
+    // III. (Generar un reporte en formato .txt
     generarReporte(dispositivos, consumoTotal);
 
     return 0;

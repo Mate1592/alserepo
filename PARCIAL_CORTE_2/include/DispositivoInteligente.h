@@ -11,14 +11,14 @@
  * energético y el bloqueo del control remoto de un dispositivo.
  */
 class DispositivoInteligente {
-    // --- Atributos Privados ---
+    //  Atributos Privados 
    private:
     std::string nombre_;
     bool estado_;  // true = encendido, false = apagado
     float consumoEnergia_;
     bool controlRemotoBloqueado_;  // true = bloqueado
 
-    // --- Métodos Públicos ---
+    //  Métodos Públicos 
    public:
     /**
      * @brief Constructor de la clase DispositivoInteligente.
@@ -27,7 +27,7 @@ class DispositivoInteligente {
      */
     DispositivoInteligente(std::string nombre, float consumoEnergia);
 
-    // --- Métodos de control de estado ---
+    // Métodos de control de estad
 
     /** @brief Enciende el dispositivo. */
     void encender();
@@ -41,7 +41,7 @@ class DispositivoInteligente {
     /** @brief Desbloquea el control remoto del dispositivo. */
     void desbloquearControlRemoto();  // Método auxiliar útil
 
-    // --- Métodos de consulta (Getters) ---
+    // Métodos de consulta 
 
     /**
      * @brief Calcula y devuelve el consumo total en un período.
