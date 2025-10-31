@@ -10,4 +10,4 @@ Makefile
 simulador_hogar
 
 # Reportes generados
-*.txt
+reporte_consumo.txt
