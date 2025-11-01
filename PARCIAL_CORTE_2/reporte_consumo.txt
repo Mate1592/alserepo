@@ -1,0 +1,9 @@
+--- Reporte Final de Consumo Energético Diario ---
+----------------------------------------------------
+Dispositivo (ID): Asistente de VozConsumo Total: 72.00 Vatios-hora
+Dispositivo (ID): Cafetera ExpresoConsumo Total: 300.00 Vatios-hora
+Dispositivo (ID): Lámpara DormitorioConsumo Total: 10.00 Vatios-hora
+Dispositivo (ID): TV 65 pulgadasConsumo Total: 450.00 Vatios-hora
+Dispositivo (ID): Consola de VideojuegosConsumo Total: 400.00 Vatios-hora
+Dispositivo (ID): Cargador de LaptopConsumo Total: 260.00 Vatios-hora
+----------------------------------------------------
