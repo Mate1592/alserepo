@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/shopping_cart_exe.dir/main.cpp.o CMakeFiles/shopping_cart_exe.dir/src/CarritoCompras.cpp.o CMakeFiles/shopping_cart_exe.dir/src/ItemCarrito.cpp.o CMakeFiles/shopping_cart_exe.dir/src/Producto.cpp.o CMakeFiles/shopping_cart_exe.dir/src/Usuario.cpp.o -o shopping_cart_exe 
