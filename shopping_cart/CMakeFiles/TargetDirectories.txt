@@ -1,0 +1,3 @@
+/workspaces/alserepo/shopping_cart/CMakeFiles/shopping_cart_exe.dir
+/workspaces/alserepo/shopping_cart/CMakeFiles/edit_cache.dir
+/workspaces/alserepo/shopping_cart/CMakeFiles/rebuild_cache.dir
