@@ -17,14 +17,33 @@ void mostrarProductos(const std::vector<Producto>& productos) {
 }
 
 int main() {
+    // Creación de un usuario
+    std::string nombreUsuario;
+    std::cout << "Ingrese su nombre de usuario: ";
+    std::getline(std::cin, nombreUsuario);
+    Usuario usuario(nombreUsuario);
+
     // Creación de una lista de productos disponibles en la tienda
     std::vector<Producto> productosDisponibles;
-    productosDisponibles.push_back(Producto("Laptop", 1200.00, 10));
-    productosDisponibles.push_back(Producto("Telefono", 800.00, 20));
-    productosDisponibles.push_back(Producto("Audifonos", 150.00, 30));
+    char agregarOtro;
+    do {
+        std::string nombre;
+        double precio;
+        int stock;
 
-    // Creación de un usuario
-    Usuario usuario("JuanPerez");
+        std::cout << "\n--- Registrar Nuevo Producto ---" << std::endl;
+        std::cout << "Nombre del producto: ";
+        std::getline(std::cin >> std::ws, nombre);
+        std::cout << "Precio del producto: ";
+        std::cin >> precio;
+        std::cout << "Stock inicial: ";
+        std::cin >> stock;
+
+        productosDisponibles.push_back(Producto(nombre, precio, stock));
+
+        std::cout << "¿Desea agregar otro producto? (s/n): ";
+        std::cin >> agregarOtro;
+    } while (agregarOtro == 's' || agregarOtro == 'S');
     CarritoCompras carritoActual;
 
     int opcion = 0;
