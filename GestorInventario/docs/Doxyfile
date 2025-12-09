@@ -1,0 +1,8 @@
+PROJECT_NAME           = GestorInventario
+OUTPUT_DIRECTORY       = docs/output
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+INPUT                  = src
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+QUIET                  = YES
