@@ -1,4 +1,4 @@
-
+build/
 *.db
 *.csv
 docs/output/

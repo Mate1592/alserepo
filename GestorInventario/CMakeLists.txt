@@ -9,8 +9,9 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-# Check for Qt5 as it is installed
-find_package(Qt5 COMPONENTS Widgets Sql REQUIRED)
+# Find Qt6 or Qt5
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Sql)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Sql REQUIRED)
 
 add_executable(gestor
     src/main.cpp
@@ -25,8 +26,8 @@ add_executable(gestor
     resources.qrc
 )
 
-# Use Qt5 libraries
-target_link_libraries(gestor PRIVATE Qt5::Widgets Qt5::Sql)
+# Use Qt libraries
+target_link_libraries(gestor PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Sql)
 
 add_executable(test_headless
     src/test_headless.cpp
@@ -37,7 +38,7 @@ add_executable(test_headless
     src/DatabaseManager.h
     src/ReportGenerator.h
 )
-target_link_libraries(test_headless PRIVATE Qt5::Widgets Qt5::Sql)
+target_link_libraries(test_headless PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Sql)
 
 # Handle UI files if needed (none provided in the prompt, UI is built in code)
 
