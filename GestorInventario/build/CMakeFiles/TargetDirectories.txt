@@ -1,0 +1,8 @@
+/workspaces/alserepo/GestorInventario/build/CMakeFiles/gestor.dir
+/workspaces/alserepo/GestorInventario/build/CMakeFiles/test_headless.dir
+/workspaces/alserepo/GestorInventario/build/CMakeFiles/edit_cache.dir
+/workspaces/alserepo/GestorInventario/build/CMakeFiles/rebuild_cache.dir
+/workspaces/alserepo/GestorInventario/build/CMakeFiles/gestor_autogen_timestamp_deps.dir
+/workspaces/alserepo/GestorInventario/build/CMakeFiles/gestor_autogen.dir
+/workspaces/alserepo/GestorInventario/build/CMakeFiles/test_headless_autogen_timestamp_deps.dir
+/workspaces/alserepo/GestorInventario/build/CMakeFiles/test_headless_autogen.dir
