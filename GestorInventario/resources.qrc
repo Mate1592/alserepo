@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <!-- Añadir iconos si se desea. Mantener vacío para menor tamaño. -->
+    </qresource>
+</RCC>
