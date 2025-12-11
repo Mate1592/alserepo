@@ -34,75 +34,77 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::setupUi() {
-    // --- Styling with QSS (Shop Theme) ---
+    // --- Styling with QSS (Industrial Warehouse Theme) ---
     QString qss = R"(
         QMainWindow {
-            background-color: #2b2b2b;
+            background-color: #263238; /* Blue-Grey Dark */
         }
         QWidget {
-            color: #ffffff;
+            color: #eceff1;
             font-family: 'Segoe UI', sans-serif;
             font-size: 14px;
         }
         QTabWidget::pane {
-            border: 1px solid #444;
-            background-color: #2b2b2b;
+            border: 1px solid #455a64;
+            background-color: #263238;
         }
         QTabBar::tab {
-            background: #3c3c3c;
-            color: #ccc;
-            padding: 8px 20px;
+            background: #37474f;
+            color: #b0bec5;
+            padding: 10px 24px;
             margin-right: 2px;
             border-top-left-radius: 4px;
             border-top-right-radius: 4px;
-        }
-        QTabBar::tab:selected {
-            background: #00796b;
-            color: #fff;
             font-weight: bold;
         }
+        QTabBar::tab:selected {
+            background: #546e7a; /* Blue-Grey Light */
+            color: #ffffff;
+            border-bottom: 2px solid #29b6f6; /* Accent Blue */
+        }
         QTableView {
-            background-color: #3c3c3c;
-            alternate-background-color: #353535;
-            selection-background-color: #00796b;
-            selection-color: #ffffff;
-            gridline-color: #555555;
-            border: 1px solid #555555;
-            border-radius: 4px;
+            background-color: #37474f;
+            alternate-background-color: #263238;
+            selection-background-color: #29b6f6;
+            selection-color: #000000;
+            gridline-color: #546e7a;
+            border: 1px solid #546e7a;
         }
         QHeaderView::section {
-            background-color: #424242;
+            background-color: #455a64;
             color: #ffffff;
-            padding: 4px;
-            border: 1px solid #555555;
+            padding: 6px;
+            border: 1px solid #546e7a;
+            font-weight: bold;
         }
         QLineEdit, QComboBox, QSpinBox {
-            background-color: #424242;
-            border: 1px solid #555555;
-            border-radius: 4px;
+            background-color: #37474f;
+            border: 1px solid #546e7a;
+            border-radius: 2px;
             padding: 6px;
             color: #ffffff;
         }
         QLineEdit:focus, QComboBox:focus, QSpinBox:focus {
-            border: 1px solid #00796b;
+            border: 1px solid #29b6f6;
         }
         QPushButton {
-            background-color: #00796b;
+            background-color: #546e7a;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 2px;
             padding: 8px 16px;
             font-weight: bold;
+            text-transform: uppercase;
         }
         QPushButton:hover {
-            background-color: #009688;
+            background-color: #607d8b;
         }
         QPushButton:pressed {
-            background-color: #004d40;
+            background-color: #37474f;
         }
         QLabel {
             font-weight: bold;
-            color: #b2dfdb;
+            color: #90a4ae;
         }
     )";
     this->setStyleSheet(qss);
@@ -117,11 +119,11 @@ void MainWindow::setupUi() {
     setupInventoryTab(tabInventory);
     setupSalesTab(tabSales);
 
-    tabs->addTab(tabInventory, "📦 Inventario");
-    tabs->addTab(tabSales, "🛒 Caja / Ventas");
+    tabs->addTab(tabInventory, "📦 ALMACÉN / INVENTARIO");
+    tabs->addTab(tabSales, "🚚 DESPACHO / SALIDAS");
 
-    setWindowTitle("Gestor de Tienda v3.0");
-    resize(950, 650);
+    setWindowTitle("Gestor de Almacén v3.1");
+    resize(1024, 700);
 }
 
 void MainWindow::setupInventoryTab(QWidget *tab) {
