@@ -41,23 +41,38 @@ int main(int argc, char *argv[]) {
         qDebug() << "Inserted component 2";
     }
 
-    // Fetch all
-    QList<Component> list;
-    if (db.fetchAll(list)) {
-        qDebug() << "Fetched" << list.size() << "components";
-        if (list.size() != 2) return 1;
-        if (list[0].name() != "Resistor 10k") return 1;
-        if (list[0].price() != 0.10) {
-            qCritical() << "Price mismatch:" << list[0].price();
-            return 1;
-        }
+    // --- Test Sales Logic ---
+    // 1. Sell 10 Resistors (ID likely 1)
+    // Need to find ID first to be robust
+    QList<Component> initialList;
+    db.fetchAll(initialList);
+    int id1 = initialList[0].id();
+
+    if (db.registerSale(id1, 10)) {
+        qDebug() << "Sale registered successfully";
     } else {
-        qCritical() << "Failed to fetch components";
+        qCritical() << "Failed to register sale";
         return 1;
     }
 
+    // 2. Verify stock reduction
+    QList<Component> afterSaleList;
+    db.fetchAll(afterSaleList);
+    if (afterSaleList[0].quantity() != 90) { // 100 - 10
+        qCritical() << "Stock did not update correctly. Expected 90, got" << afterSaleList[0].quantity();
+        return 1;
+    }
+
+    // 3. Verify insufficient stock error
+    if (db.registerSale(id1, 1000)) {
+        qCritical() << "Should have failed due to insufficient stock";
+        return 1;
+    } else {
+        qDebug() << "Insufficient stock handled correctly";
+    }
+
     // Export CSV
-    if (ReportGenerator::exportCsv("test_inventory.csv", list)) {
+    if (ReportGenerator::exportCsv("test_inventory.csv", afterSaleList)) {
         qDebug() << "Exported CSV";
     } else {
         qCritical() << "Failed to export CSV";

@@ -2,6 +2,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
+#include <QDateTime>
 
 DatabaseManager::DatabaseManager(QObject *parent) : QObject(parent) {}
 
@@ -27,8 +28,8 @@ bool DatabaseManager::openDatabase(const QString &filePath) {
 
 bool DatabaseManager::initSchema() {
     QSqlQuery q(m_db);
-    // Create table with price column
-    const QString create = R"(
+    // Create table components
+    const QString createComponents = R"(
      CREATE TABLE IF NOT EXISTS components (
      id INTEGER PRIMARY KEY AUTOINCREMENT,
      name TEXT NOT NULL,
@@ -39,14 +40,27 @@ bool DatabaseManager::initSchema() {
      price REAL DEFAULT 0.0
      )
     )";
-    if (!q.exec(create)) {
+    if (!q.exec(createComponents)) {
         emit errorOccurred(q.lastError().text());
         return false;
     }
 
-    // Migration attempt: check if 'price' column exists, if not, add it.
-    // This handles the case where the user re-uses an old DB.
-    // PRAGMA table_info returns rows where 'name' is the column name.
+    // Create table sales
+    const QString createSales = R"(
+     CREATE TABLE IF NOT EXISTS sales (
+     id INTEGER PRIMARY KEY AUTOINCREMENT,
+     component_id INTEGER,
+     quantity INTEGER,
+     total_price REAL,
+     sale_date TEXT
+     )
+    )";
+    if (!q.exec(createSales)) {
+        emit errorOccurred(q.lastError().text());
+        return false;
+    }
+
+    // Migration logic for components.price
     if (q.exec("PRAGMA table_info(components)")) {
         bool hasPrice = false;
         while (q.next()) {
@@ -59,7 +73,6 @@ bool DatabaseManager::initSchema() {
         if (!hasPrice) {
             QSqlQuery alterQ(m_db);
             if (!alterQ.exec("ALTER TABLE components ADD COLUMN price REAL DEFAULT 0.0")) {
-                 // Not critical error, but worth logging or emitting
                  qDebug() << "Migration failed:" << alterQ.lastError().text();
             }
         }
@@ -110,6 +123,52 @@ bool DatabaseManager::deleteComponent(int id) {
         return false;
     }
     return true;
+}
+
+bool DatabaseManager::registerSale(int componentId, int quantity) {
+    m_db.transaction();
+    QSqlQuery q(m_db);
+
+    // 1. Get current price
+    q.prepare("SELECT price FROM components WHERE id=:id");
+    q.bindValue(":id", componentId);
+    if (!q.exec() || !q.next()) {
+        m_db.rollback();
+        emit errorOccurred("Producto no encontrado");
+        return false;
+    }
+    double price = q.value(0).toDouble();
+
+    // 2. Reduce stock
+    q.prepare("UPDATE components SET quantity = quantity - :qty WHERE id=:id AND quantity >= :qty");
+    q.bindValue(":qty", quantity);
+    q.bindValue(":id", componentId);
+    if (!q.exec()) {
+        m_db.rollback();
+        emit errorOccurred("Error actualizando stock");
+        return false;
+    }
+    if (q.numRowsAffected() == 0) {
+        m_db.rollback();
+        emit errorOccurred("Stock insuficiente");
+        return false;
+    }
+
+    // 3. Insert sale record
+    double total = price * quantity;
+    q.prepare("INSERT INTO sales (component_id, quantity, total_price, sale_date) VALUES (:cid, :qty, :total, :date)");
+    q.bindValue(":cid", componentId);
+    q.bindValue(":qty", quantity);
+    q.bindValue(":total", total);
+    q.bindValue(":date", QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss"));
+
+    if (!q.exec()) {
+        m_db.rollback();
+        emit errorOccurred("Error registrando venta");
+        return false;
+    }
+
+    return m_db.commit();
 }
 
 bool DatabaseManager::fetchAll(QList<Component> &outList) {

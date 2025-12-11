@@ -24,6 +24,9 @@ public:
     bool updateComponent(const Component &c);
     bool deleteComponent(int id);
 
+    // Registra una venta: reduce stock y guarda registro en tabla 'sales'
+    bool registerSale(int componentId, int quantity);
+
     // Devuelve true si la operación fue exitosa y llena outList con los componentes
     bool fetchAll(QList<Component> &outList);
 
