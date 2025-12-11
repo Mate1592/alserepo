@@ -36,6 +36,7 @@ private:
     QLineEdit *m_nameEdit = nullptr;
     QLineEdit *m_typeEdit = nullptr;
     QLineEdit *m_quantityEdit = nullptr;
+    QLineEdit *m_priceEdit = nullptr; // Nuevo campo precio
     QLineEdit *m_locationEdit = nullptr;
     QLineEdit *m_dateEdit = nullptr;
 };
